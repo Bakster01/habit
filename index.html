@@ -20,7 +20,9 @@
     .brand{display:flex;align-items:center;gap:12px;font:bold clamp(1.2rem,3vw,1.95rem)/1 Georgia,serif;text-decoration:none}
     .mark{display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:var(--green);color:white;flex:none}
     .mark svg{width:27px;height:27px}
-    nav{display:flex;gap:8px}
+    nav{display:flex;align-items:center;gap:8px}
+    .language-link{padding:8px 4px;font-size:.85rem;font-weight:650}
+    @media(max-width:420px){header{flex-wrap:wrap}}
     nav button,.action{border:1px solid transparent;background:transparent;border-radius:9px;padding:8px 14px;font-weight:650}
     nav [aria-current="page"],.primary{background:var(--green);color:white}
     .hero{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;min-height:290px;padding:21px 25px}
@@ -86,6 +88,7 @@
       Habit Practice
     </a>
     <nav aria-label="Main navigation">
+      <a class="language-link" href="../index.html">Languages</a>
       <button id="learn-nav" type="button">Learn</button>
       <button id="practice-nav" type="button" aria-current="page">Practice</button>
     </nav>
@@ -497,4 +500,3 @@
   </script>
 </body>
 </html>
-
