@@ -152,66 +152,66 @@
   </footer>
   <script>
   "use strict";
-  // Each chapter has one scenario, four choices, a correct choice index and a takeaway.
+  // Each chapter has its book title, a scenario, four choices, a correct choice index and a takeaway.
   const chapters = [
-    ["Small changes and systems", "Nora wants to finish twelve books this year. Which option gives her a system?", [
+    ["The Surprising Power of Atomic Habits", "Nora wants to finish twelve books this year. Which option gives her a system?", [
       "Raise her yearly target to fifteen books.", "Read for ten minutes after breakfast every day.", "Check the total on the last day of each month.", "Buy all twelve books up front."
     ], 1, "A system is a repeatable process. Reading after breakfast creates the regular practice that can produce the result."],
-    ["Identity-based habits", "Liam wants to see himself as someone who writes regularly. What gives him the strongest evidence this week?", [
+    ["How Your Habits Shape Your Identity (and Vice Versa)", "Liam wants to see himself as someone who writes regularly. What gives him the strongest evidence this week?", [
       "Set a deadline for his first novel.", "Buy a notebook used by a favorite author.", "Describe himself as a writer on his profile.", "Write one paragraph every morning."
     ], 3, "Small completed actions give Liam evidence that he is becoming the kind of person he wants to be."],
-    ["The habit loop", "A phone buzzes. Ava wants to know who messaged. She checks the screen and feels relieved. What is the craving?", [
+    ["How to Build Better Habits in 4 Simple Steps", "A phone buzzes. Ava wants to know who messaged. She checks the screen and feels relieved. What is the craving?", [
       "Wanting to know who messaged.", "Feeling the phone buzz.", "Checking the screen.", "Feeling relieved."
     ], 0, "The buzz is the cue, the wish to know is the craving, checking is the response, and relief is the reward."],
-    ["Awareness", "Theo opens a shopping app without thinking during work breaks. What should he try first to identify the trigger?", [
+    ["The Man Who Didn’t Look Right", "Theo opens a shopping app without thinking during work breaks. What should he try first to identify the trigger?", [
       "Choose a weekly spending limit.", "Reward himself for days with zero purchases.", "Record when he opens it and what happened just before.", "Replace the app with a different retailer."
     ], 2, "Recording the behavior and its context makes the automatic pattern visible and gives Theo a cue he can change."],
-    ["Habit stacking", "Which plan attaches a new action to an existing habit?", [
+    ["The Best Way to Start a New Habit", "Which plan attaches a new action to an existing habit?", [
       "At 7 a.m. I’ll stretch in the living room.", "After I pour my morning coffee, I’ll stretch for one minute.", "I’ll stretch four times this week.", "I’ll stretch whenever I feel stiff."
     ], 1, "Habit stacking uses something you reliably do already as the signal to start the new action."],
-    ["Environment design", "Jules keeps forgetting to bring a reusable bag to the grocery store. Which change gives the clearest cue at the right moment?", [
+    ["Motivation Is Overrated; Environment Often Matters More", "Jules keeps forgetting to bring a reusable bag to the grocery store. Which change gives the clearest cue at the right moment?", [
       "Hang the bag beside the keys used to leave for the store.", "Keep the bag in a labeled box in the attic.", "Add reusable bags to a list of long-term goals.", "Buy a higher-quality bag and keep it inside its packaging."
     ], 0, "Put a visible prompt where the decision happens. Seeing the bag next to the keys makes the next action easier to remember."],
-    ["Removing cues", "A news alert often leads Maya to scroll during class. Which change directly reduces exposure to the cue?", [
+    ["The Secret to Self-Control", "A news alert often leads Maya to scroll during class. Which change directly reduces exposure to the cue?", [
       "Sign out after every scrolling session.", "Ask a classmate to check her screen time.", "Reward herself after a focus session.", "Turn off news alerts during class."
     ], 3, "Removing or hiding the trigger reduces how often Maya has to resist the urge to check."],
-    ["Temptation bundling", "Ezra wants to walk more and looks forward to a favorite audiobook. Which plan pairs the two activities?", [
+    ["How to Make a Habit Irresistible", "Ezra wants to walk more and looks forward to a favorite audiobook. Which plan pairs the two activities?", [
       "Listen to the audiobook during his regular walk.", "Listen to the audiobook, then decide whether to walk.", "Write his walking target on the book’s cover.", "Buy an audiobook after walking every day for a year."
     ], 0, "Pair an activity you want to do with the one you want to repeat. Anticipating the audiobook makes starting the walk more appealing."],
-    ["Social norms", "Bea wants to speak Spanish more often. Which group best supports the habit?", [
+    ["The Role of Family and Friends in Shaping Your Habits", "Bea wants to speak Spanish more often. Which group best supports the habit?", [
       "A book club that discusses Spanish novels in English.", "A group for learners at her level who converse in Spanish weekly.", "An advanced group she can only observe.", "A travel forum that rarely discusses language practice."
     ], 1, "A group where the desired behavior is normal provides repeated opportunities and makes the behavior feel like part of belonging."],
-    ["Reframing a habit", "After hard meetings, Raj scrolls for a break. Which thought reframes a short walk as an appealing replacement?", [
+    ["How to Find and Fix the Causes of Your Bad Habits", "After hard meetings, Raj scrolls for a break. Which thought reframes a short walk as an appealing replacement?", [
       "I’ll move my phone farther away.", "I’ll track which meetings lead to scrolling.", "A walk will give me a real pause and I can return with a clear head.", "I’ll ask a coworker to check up on me."
     ], 2, "Find the change in feeling the habit delivers, then highlight how another action can meet that need."],
-    ["Practice and repetition", "Iris wants writing to feel more automatic. Which activity gives her direct practice?", [
+    ["Walk Slowly, but Never Backward", "Iris wants writing to feel more automatic. Which activity gives her direct practice?", [
       "Compare three writing apps.", "Create a spreadsheet of possible themes.", "Watch a video about writing routines.", "Draft a short paragraph each afternoon."
     ], 3, "Repetition of the target behavior builds fluency. Planning may prepare Iris to write, and drafting gives her actual practice."],
-    ["Reducing friction", "Ana skips evening workouts because getting to the gym means an extra bus ride. What most directly reduces the friction?", [
+    ["The Law of Least Effort", "Ana skips evening workouts because getting to the gym means an extra bus ride. What most directly reduces the friction?", [
       "Set a more ambitious workout goal.", "Pick a gym she passes on the way home.", "Promise a bigger reward after each session.", "Invite a friend to check whether she went."
     ], 1, "A gym already on the route removes an extra step every time Ana wants to train."],
-    ["The Two-Minute Rule", "Sam keeps putting off a half-hour guitar session. Which version best applies the Two-Minute Rule?", [
+    ["How to Stop Procrastinating by Using the Two-Minute Rule", "Sam keeps putting off a half-hour guitar session. Which version best applies the Two-Minute Rule?", [
       "Sit down, pick up the guitar, and play one chord.", "Schedule a one-hour session on weekends.", "Read about guitar practice for two minutes.", "Buy a second guitar for the living room."
     ], 0, "Shrink the beginning of the desired habit so it is easy to start. Playing one chord is already a tiny version of practicing guitar."],
-    ["Commitment devices", "Mina wants to stop video streaming from taking over planned study time. Which choice constrains her future options in advance?", [
+    ["How to Make Good Habits Inevitable and Bad Habits Impossible", "Mina wants to stop video streaming from taking over planned study time. Which choice constrains her future options in advance?", [
       "Write down how much time she streams.", "Set a reminder to think about her priorities.", "Schedule a site block during study hours with a passcode held by a friend.", "Plan to reward herself after a week of studying."
     ], 2, "A commitment device makes a future choice harder to reverse while you are still in a position to set it up."],
-    ["Immediate reinforcement", "Owen wants to cook at home to save money over the year. Which action adds an immediate reward that supports the goal?", [
+    ["The Cardinal Rule of Behavior Change", "Owen wants to cook at home to save money over the year. Which action adds an immediate reward that supports the goal?", [
       "Wait until December to calculate the savings.", "Compare his grocery budget with a friend’s budget.", "Raise his savings target after every meal.", "Move a small amount to a vacation fund right after each home-cooked dinner."
     ], 3, "An immediate, compatible reward gives Owen a reason to feel good about repeating the action while the long-term benefit builds."],
-    ["Getting back on track", "Liv usually journals each evening but missed yesterday. What is the best response tonight?", [
+    ["How to Stick with Good Habits Every Day", "Liv usually journals each evening but missed yesterday. What is the best response tonight?", [
       "Write twice as much tomorrow to make up for it.", "Write one sentence tonight and return to the routine.", "Wait for the next week to start a clean streak.", "Replace journaling with a new habit before trying again."
     ], 1, "Recover on the next opportunity. A small version lets Liv return to the pattern without making the missed day harder to overcome."],
-    ["Accountability", "Tariq wants to stop arriving late to a weekly study group. Which plan creates immediate accountability?", [
+    ["How an Accountability Partner Can Change Everything", "Tariq wants to stop arriving late to a weekly study group. Which plan creates immediate accountability?", [
       "Track his average arrival time privately at the end of the year.", "Pick a new goal for his overall grades.", "Agree to text his partner when he arrives and take cleanup duty if he’s late.", "Pack his bag the night before."
     ], 2, "An agreed consequence and another person who can check follow-through give the choice a cost in the present."],
-    ["Choosing a good fit", "Mara wants to exercise consistently. She enjoys hiking and dislikes competitive classes. Which experiment gives her a good starting fit?", [
+    ["The Truth About Talent (When Genes Matter and When They Don’t)", "Mara wants to exercise consistently. She enjoys hiking and dislikes competitive classes. Which experiment gives her a good starting fit?", [
       "Try a regular route that uses her enjoyment of hiking and builds on her current stamina.", "Join the hardest class because it works for a friend.", "Pick a different activity every session without noting what she enjoys.", "Choose an exercise solely because it burns the most calories."
     ], 0, "Choose a version that fits your interests and abilities, then adjust based on what you can sustain."],
-    ["The Goldilocks Rule", "Dev can easily solve beginner chess puzzles and finds expert puzzles overwhelming. Which set is most likely to keep him engaged?", [
+    ["The Goldilocks Rule: How to Stay Motivated in Life and Work", "Dev can easily solve beginner chess puzzles and finds expert puzzles overwhelming. Which set is most likely to keep him engaged?", [
       "The same beginner puzzles he has memorized.", "Expert puzzles he cannot begin to solve.", "Random puzzles with no feedback or difficulty level.", "Puzzles one level above his current comfort zone."
     ], 3, "A manageable stretch offers enough challenge to hold attention while still making progress possible."],
-    ["Reflection and review", "Ren has practiced piano at the same pace for months and keeps making the same mistake. What would help improve beyond that routine?", [
+    ["The Downside of Creating Good Habits", "Ren has practiced piano at the same pace for months and keeps making the same mistake. What would help improve beyond that routine?", [
       "Extend the session but repeat the piece the same way.", "Review a recording, isolate the tricky passage, and practice it with feedback.", "Track only the number of days practiced.", "Switch to a different instrument each week."
     ], 1, "Review reveals where a fluent routine is hiding errors. Deliberate practice lets Ren work directly on the part that needs improvement."]
   ];
@@ -379,8 +379,8 @@
     }
 
     const chapterId = ids[cursor];
-    const [topic, question, choices, correct, explanation] = chapters[chapterId];
-    el("chapter-label").textContent = "Chapter " + (chapterId + 1) + " · " + topic;
+    const [chapterTitle, question, choices, correct, explanation] = chapters[chapterId];
+    el("chapter-label").textContent = "Atomic Habits · Chapter " + (chapterId + 1) + " · " + chapterTitle;
     el("question-title").textContent = question;
     el("chapter-summary-link").href = danSummaryUrl + "#" + chapterSummaryFragments[chapterId];
     el("choices").replaceChildren();
@@ -424,11 +424,11 @@
   }
 
   function makeNotes() {
-    for (const [index, [topic, , , , explanation]] of chapters.entries()) {
+    for (const [index, [chapterTitle, , , , explanation]] of chapters.entries()) {
       const chapter = document.createElement("details");
       chapter.className = "chapter";
       const title = document.createElement("summary");
-      title.textContent = "Chapter " + (index + 1) + " · " + topic;
+      title.textContent = "Chapter " + (index + 1) + " · " + chapterTitle;
       const note = document.createElement("p");
       note.textContent = explanation;
       const button = document.createElement("button");
