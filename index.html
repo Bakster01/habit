@@ -42,6 +42,7 @@
     progress::-moz-progress-bar{background:var(--green);border-radius:12px}
     #position{white-space:nowrap}
     .kicker{margin:0 0 7px;color:var(--muted);font-size:.85rem;font-weight:700}
+    .chapter-source{margin:9px 0 0;font-size:.86rem}
     .choices{display:grid;gap:9px;margin:19px 0 0}
     .choice{position:relative;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer;min-height:51px}
     .choice:hover,.topic:hover,.chapter:hover{border-color:var(--green)}
@@ -115,6 +116,7 @@
         <p class="kicker" id="chapter-label"></p>
         <h2 id="question-title" tabindex="-1"></h2>
         <form id="question-form">
+          <p class="chapter-source"><a id="chapter-summary-link" target="_blank" rel="noopener noreferrer">Read Dan Silvestre’s summary for this chapter ↗</a></p>
           <div class="choices" id="choices" role="radiogroup" aria-labelledby="question-title"></div>
           <div class="feedback" id="feedback" role="status" hidden></div>
           <div class="footer-actions">
@@ -212,6 +214,31 @@
     ["Reflection and review", "Ren has practiced piano at the same pace for months and keeps making the same mistake. What would help improve beyond that routine?", [
       "Extend the session but repeat the piece the same way.", "Review a recording, isolate the tricky passage, and practice it with feedback.", "Track only the number of days practiced.", "Switch to a different instrument each week."
     ], 1, "Review reveals where a fluent routine is hiding errors. Deliberate practice lets Ren work directly on the part that needs improvement."]
+  ];
+  const danSummaryUrl = "https://dansilvestre.com/summaries/atomic-habits-james-clear/";
+  const chapterSummaryFragments = [
+    "Chapter_1_The_Surprising_Power_of_Atomic_Habits",
+    "Chapter_2_How_Your_Habits_Shape_Your_Identity_and_Vice_Versa",
+    "Chapter_3_How_to_Build_Better_Habits_in_4_Simple_Steps",
+    "Chapter_4_The_Man_Who_Didnt_Look_Right",
+    "Chapter_5_The_Best_Way_to_Start_a_New_Habit",
+    "Chapter_6_Motivation_Is_Overrated_Environment_Often_Matters_More",
+    "Chapter_7_The_Secret_to_Self-Control",
+    "Chapter_8_How_to_Make_a_Habit_Irresistible",
+    "Chapter_9_The_Role_of_Family_and_Friends_in_Shaping_Your_Habits",
+    "Chapter_10_How_to_Find_and_Fix_the_Causes_of_Your_Bad_Habits",
+    "Chapter_11_Walk_Slowly_but_Never_Backward",
+    "Chapter_12_The_Law_of_Least_Effort",
+    "Chapter_13_How_to_Stop_Procrastinating_by_Using_the_Two-Minute_Rule",
+    "Chapter_14_How_to_Make_Good_Habits_Inevitable_and_Bad_Habits_Impossible",
+    "Chapter_15_The_Cardinal_Rule_of_Behavior_Change",
+    "Chapter_16_How_to_Stick_with_Good_Habits_Every_Day",
+    "Chapter_17_How_an_Accountability_Partner_Can_Change_Everything",
+    "Chapter_18_The_Truth_About_Talent_When_Genes_Matter_and_When_They_Dont",
+    "Chapter_19_The_Goldilocks_Rule_How_to_Stay_Motivated_in_Life_and_Work",
+    // Chapter 20 has no anchor of its own. Keep the preceding heading as a fallback.
+    "Chapter_19_The_Goldilocks_Rule_How_to_Stay_Motivated_in_Life_and_Work:~:text=" +
+      encodeURIComponent("Chapter 20: The Downside of Creating Good Habits")
   ];
   const groups = [
     { title: "Foundations", summary: "Systems, identity, and the habit loop", icon: "book", start: 0, end: 3 },
@@ -355,6 +382,7 @@
     const [topic, question, choices, correct, explanation] = chapters[chapterId];
     el("chapter-label").textContent = "Chapter " + (chapterId + 1) + " · " + topic;
     el("question-title").textContent = question;
+    el("chapter-summary-link").href = danSummaryUrl + "#" + chapterSummaryFragments[chapterId];
     el("choices").replaceChildren();
     for (const [index, choice] of choices.entries()) {
       const label = document.createElement("label");
